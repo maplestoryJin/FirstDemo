@@ -1,0 +1,10 @@
+language: android
+dist: trusty
+android:
+  components:
+    - tools
+    - platform-tools
+    - android-29
+    - extra-android-m2repository
+
+script: ./gradlew build
