@@ -1,6 +1,5 @@
-package com.example.firstdemo
+package com.example.refactor_kata.fizzbuzz
 
-import com.example.refactor_kata.FizzBuzz
 import org.hamcrest.core.Is
 import org.junit.Assert.assertThat
 import org.junit.Test
