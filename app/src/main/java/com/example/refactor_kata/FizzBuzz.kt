@@ -1,4 +1,4 @@
-package com.example.firstdemo
+package com.example.refactor_kata
 
 class FizzBuzz(private val i: Int) {
     fun of(): String {

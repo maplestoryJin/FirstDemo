@@ -1,9 +1,9 @@
-package com.example.firstdemo.bowling
+package com.example.refactor_kata.bowling
 
-import com.example.firstdemo.bowling.frame.IFrame
-import com.example.firstdemo.bowling.frame.NormalFrame
-import com.example.firstdemo.bowling.frame.SpareFrame
-import com.example.firstdemo.bowling.frame.StrikeFrame
+import com.example.refactor_kata.bowling.frame.IFrame
+import com.example.refactor_kata.bowling.frame.NormalFrame
+import com.example.refactor_kata.bowling.frame.SpareFrame
+import com.example.refactor_kata.bowling.frame.StrikeFrame
 
 class Game {
     private val frames = mutableListOf<IFrame>()
@@ -15,7 +15,11 @@ class Game {
             return
         }
         when {
-            isStrike(firstRoll) -> frames.add(StrikeFrame(rolls))
+            isStrike(firstRoll) -> frames.add(
+                StrikeFrame(
+                    rolls
+                )
+            )
             isSpare(firstRoll, secondRoll) -> frames.add(
                 SpareFrame(
                     rolls,

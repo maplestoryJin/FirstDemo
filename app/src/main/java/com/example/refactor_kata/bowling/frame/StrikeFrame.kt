@@ -1,4 +1,4 @@
-package com.example.firstdemo.bowling.frame
+package com.example.refactor_kata.bowling.frame
 
 class StrikeFrame(private val rolls: MutableList<Int>) :
     IFrame {
