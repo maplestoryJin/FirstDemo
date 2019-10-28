@@ -18,16 +18,16 @@ fun result(days: Int): String {
 	printStream.println("OMGHAI!")
 
 	val items = arrayOf(
-		Item("+5 Dexterity Vest", 10, 20), //
-		Item("Aged Brie", 2, 0), //
-		Item("Elixir of the Mongoose", 5, 7), //
-		Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-		Item("Sulfuras, Hand of Ragnaros", -1, 80),
-		Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-		Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-		Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+		NormalItem("+5 Dexterity Vest", 10, 20), //
+		AgedBrieItem(2, 0), //
+		NormalItem("Elixir of the Mongoose", 5, 7), //
+		SulfurasItem(0, 80), //
+		SulfurasItem(-1, 80),
+		BackstageItem(15, 20),
+		BackstageItem(10, 49),
+		BackstageItem(5, 49),
 		// this conjured item does not work properly yet
-		Item("Conjured Mana Cake", 3, 6)
+		NormalItem("Conjured Mana Cake", 3, 6)
 	)
 
 	val app = GildedRose(items)
