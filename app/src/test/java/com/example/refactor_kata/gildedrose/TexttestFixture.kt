@@ -1,8 +1,21 @@
 package com.example.refactor_kata.gildedrose
 
-fun main(args: Array<String>) {
+import java.io.ByteArrayOutputStream
+import java.io.PrintStream
 
-	println("OMGHAI!")
+fun main(args: Array<String>) {
+	var days = 2
+	if (args.isNotEmpty()) {
+		days = Integer.parseInt(args[0]) + 1
+	}
+	print(result(days))
+
+}
+
+fun result(days: Int): String {
+	val out = ByteArrayOutputStream(1024)
+	val printStream = PrintStream(out)
+	printStream.println("OMGHAI!")
 
 	val items = arrayOf(
 		Item("+5 Dexterity Vest", 10, 20), //
@@ -19,20 +32,16 @@ fun main(args: Array<String>) {
 
 	val app = GildedRose(items)
 
-	var days = 2
-	if (args.size > 0) {
-		days = Integer.parseInt(args[0]) + 1
-	}
 
-	for (i in 0..days - 1) {
-		println("-------- day $i --------")
-		println("name, sellIn, quality")
+	for (i in 0 until days) {
+		printStream.println("-------- day $i --------")
+		printStream.println("name, sellIn, quality")
 		for (item in items) {
-			println(item)
+			printStream.println(item)
 		}
-		println()
+		printStream.println()
 		app.updateQuality()
 	}
 
-
+	return out.toString()
 }
