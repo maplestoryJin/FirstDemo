@@ -1,15 +1,16 @@
 package com.example.refactor_kata.gildedrose
 
-class AgedBrieItem(sellIn: Int, quality: Int) : Item("Aged Brie", sellIn, quality) {
-    override fun updateQualityAfterExpire() {
-        qualityIncrease()
-    }
+class AgedBrieItem(sell: Int, quality: Int) : Item("Aged Brie", sell, quality) {
+	override fun updateSellInDays() {
+		sellIn--
+	}
 
-    override fun updateQuality() {
-        qualityIncrease()
-    }
+	override fun updateQualityAfterExpire() {
+		qualityIncrease()
+	}
 
-    override fun updateSellInDays() {
-        sellDecrease()
-    }
+	override fun updateQuality() {
+		qualityIncrease()
+	}
+
 }

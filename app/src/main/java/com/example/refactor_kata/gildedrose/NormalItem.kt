@@ -1,6 +1,10 @@
 package com.example.refactor_kata.gildedrose
 
-class NormalItem(name: String, sellIn: Int, quality: Int) : Item(name, sellIn, quality) {
+class NormalItem(name: String, sell: Int, quality: Int) : Item(name, sell, quality) {
+    override fun updateSellInDays() {
+        sellIn--
+    }
+
     override fun updateQualityAfterExpire() {
         qualityDecrease()
     }
@@ -9,7 +13,4 @@ class NormalItem(name: String, sellIn: Int, quality: Int) : Item(name, sellIn, q
         qualityDecrease()
     }
 
-    override fun updateSellInDays() {
-        sellDecrease()
-    }
 }

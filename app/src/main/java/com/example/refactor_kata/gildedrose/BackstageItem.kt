@@ -1,14 +1,17 @@
 package com.example.refactor_kata.gildedrose
 
-class BackstageItem(sellIn: Int, quality: Int) :
-    Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality) {
+class BackstageItem(sell: Int, quality: Int) :
+    Item("Backstage passes to a TAFKAL80ETC concert", sell, quality) {
+    override fun updateSellInDays() {
+        sellIn--
+    }
+
     override fun updateQualityAfterExpire() {
         quality = 0
     }
 
     override fun updateQuality() {
         qualityIncrease()
-
         if (sellIn < 10) {
             qualityIncrease()
         }
@@ -16,9 +19,6 @@ class BackstageItem(sellIn: Int, quality: Int) :
         if (sellIn < 5) {
             qualityIncrease()
         }
-    }
 
-    override fun updateSellInDays() {
-        sellDecrease()
     }
 }
