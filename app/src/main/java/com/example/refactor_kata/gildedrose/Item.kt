@@ -32,12 +32,4 @@ abstract class Item(var name: String, var sellIn: Int, var quality: Int) {
         return "Item(name=$name, sellIn=$sellIn, quality=$quality)"
     }
 
-
-    protected fun qualityDecrease() {
-        if (quality > 0) {
-            quality -= 1
-        }
-    }
-
-
 }
